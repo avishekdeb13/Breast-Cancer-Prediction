@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Total Data Science</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+<img src=
+"https://content.presspage.com/uploads/2110/1920_gettyimages-888812608.jpg?10000"
+         alt="zomato image", width="400", height="150", style="float:left">
+
+
+<style>
+body {
+  background-image: url("https://www.uicc.org/sites/main/files/styles/uicc_news_main_image/public/thumbnails/image/BCAM2016_FA.jpg?itok=zimiEGKS");
+  background-position: 200%;
+  background-size: cover;
+}
+</style>
+
+
+
+ <div class="login">
+	<h1>Breast Cancer Detection</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	<input type="text" name="clump_thickness" placeholder="clump_thickness" required="required" />
+        <input type="text" name="size_uniformity" placeholder="size_uniformity" required="required" />
+		<input type="text" name="shape_uniformity" placeholder="shape_uniformity" required="required" />
+        <input type="text" name="marginal_adhesion" placeholder="marginal_adhesion" required="required" />
+        <input type="text" name="epithelial_size" placeholder="epithelial_size" required="required" />
+        <input type="text" name="bare_nucleoli" placeholder="bare_nucleoli" required="required" />
+        <input type="text" name="bland_chromatin" placeholder="bland_chromatin" required="required" />
+        <input type="text" name="normal_nucleoli" placeholder="normal_nucleoli" required="required" />
+        <input type="text" name=" mitoses" placeholder=" mitoses" required="required" />
+        
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+     <h2>
+       {{ prediction_text }}
+     </h2>
+
+
+ </div>
+
+
+</body>
+</html>
